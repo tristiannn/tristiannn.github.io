@@ -241,3 +241,30 @@ img {
       display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .wrapper-img {
+    width: 90%;
+  }
+  .header {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 20px;
+  }
+  .sidebar-text{
+    font-size:25px
+
+  }
+  .projects{
+    display: none;
+  }
+  .img-nav{
+       display: none;
+  }
+  .next{
+      display: none;
+  }
+}
