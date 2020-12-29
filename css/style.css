@@ -232,12 +232,14 @@ img {
 
   }
   .projects{
-      font-size: 12px;
+      font-size: 10px;
+    color:grey;
   }
   .img-nav{
       font-size: 12px;
       right: 0;
       bottom: 13%;
+    color:grey;
   }
   .next{
       display: none;
