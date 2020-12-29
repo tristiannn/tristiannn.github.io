@@ -212,7 +212,7 @@ img {
 
   .projects,
   .img-nav {
-
+ display: none;
   }
 }
 @media screen and (max-width: 600px) {
@@ -232,14 +232,10 @@ img {
 
   }
   .projects{
-      font-size: 10px;
-    color:grey;
+    display: none;
   }
   .img-nav{
-      font-size: 12px;
-      right: 0;
-      bottom: 13%;
-    color:grey;
+       display: none;
   }
   .next{
       display: none;
