@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- loader  -->
+  <div class="wrapper">
+    <div class="loader"></div>
+  </div>
+  <div class="container">
+    <!-- nav  -->
+    <nav class="menu">
+      <div class="menu-left menu-item">
+        <a class="menu-link" href="#">about</a>
+        <a class="menu-link" href="#">contact</a>
+      </div>
+      <div class="menu-center menu-item">
+        <div class="brand-logo">Prototype Landing Page</div>
+      </div>
+      <div class="menu-right menu-item">
+        <div class="search-icon">
+          <ion-icon name="search-sharp"></ion-icon>
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero image  -->
+    <div class="wrapper-img">
+      <div class="box"></div>
+      <div>
+        <img class="image" src="hero-img.jpg" alt="Photo by Saeed Siddiqui on Unsplash">
+      </div>
+    </div>
+
+    <!-- header  -->
+    <div class="header">
+      <h1 class="header-1">Tristianto</h1>
+      <h1 class="header-2">Raflesia</h1>
+    </div>
+
+    <!-- hero-container  -->
+    <div class="hero-container">
+      <div class="sidebar-text">PROTOTYPE-001</div>
+      <div class="projects">Frontend Developer</div>
+      <div class="img-nav">
+        <a class="prev" href="www.instagram.com/tristiannn">Instagram</a>
+        <div class="next">Github</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- javascript - animejs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <script>
+    var textWrapper = document.querySelector('.header-1');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+      .add({
+        targets: '.header-1 .letter',
+        translateY: [200, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+      });
+
+    var textWrapper = document.querySelector('.header-2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+      .add({
+        targets: '.header-2 .letter',
+        translateY: [200, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+      });
+
+    TweenMax.to(".wrapper", 2, {
+      top: "-100%",
+      ease: Expo.easeInOut,
+      delay: 3.6
+    });
+
+
+    var tl = new TimelineMax();
+
+    tl.from(".loader", 1.6, {
+      scaleY: "0%",
+      y: 80,
+      ease: Expo.easeInOut,
+      delay: 1,
+      transformOrigin: "50% 100%"
+    });
+
+    tl.to(".loader", 1.6, {
+      height: "20vh",
+      scaleY: "0%",
+      ease: Expo.easeInOut,
+      transformOrigin: "0% -100%"
+    });
+
+    TweenMax.to(".box", 2.4, {
+      y: "-100%",
+      ease: Expo.easeInOut,
+      delay: 3.8,
+    });
+
+    var tl = new TweenMax.staggerFrom(".menu > div", 2, {
+      opacity: 0,
+      y: 30,
+      ease: Expo.easeInOut,
+      delay: 4.2
+    }, 0.1);
+
+    var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+      opacity: 0,
+      y: 30,
+      ease: Expo.easeInOut,
+      delay: 4.2
+    }, 0.1);
+  </script>
+
+
+</body>
+
+</html>
